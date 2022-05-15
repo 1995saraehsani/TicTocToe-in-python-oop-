@@ -53,29 +53,29 @@ class TicTocToe:
 
     def por_bodane_jadval(self,jadvale_bazi):
         por_bodan=None
-        cc=[]
+        Table_filling_detection_list=[]
         for i in range(len(jadvale_bazi)):
             for j in range(len(jadvale_bazi)):
                 
                 if jadvale_bazi[i][j]=='__':
                     #return True                 #اreturn true if the table is empty
-                    cc.append('True')            #if it adds true to the cc list,it stillhas an empty cell table
+                    Table_filling_detection_list.append('True')            #if it adds true to the cc list,it stillhas an empty cell table
                 if jadvale_bazi[i][j]!='__':
                     #return False                #return false if the table is full
-                    cc.append('False')
+                    Table_filling_detection_list.append('False')
                     
         counter=0
-        for i in range(len(cc)):
+        for i in range(len(Table_filling_detection_list)):
             barande_4=self.barande
-            if cc[i]=='True':                
+            if Table_filling_detection_list[i]=='True':                
                 self.checking_for_game_winner(jadvale_bazi,por_bodan)
                 if barande_4=='X' or barande_4=='O':
                     break
                 break
             
-            if cc[i]=='False':
+            if Table_filling_detection_list[i]=='False':
                 counter+=1
-                if counter==len(cc):
+                if counter==len(Table_filling_detection_list):
                     print('')
                     print("")
                     print('Jadval por shod')
